@@ -1,0 +1,37 @@
+{
+  "name": "boilerplate-vue2-webpack",
+  "version": "1.0.0",
+  "description": "Boilerplate vue 2 fait avec webpack 5 en octobre 2021.",
+  "main": "src/main.js",
+  "author": "aligony",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "serve": "webpack serve --color --progress --config webpack.dev.js",
+    "dev": "  webpack --color --progress --config webpack.dev.js",
+    "build": "webpack --color --progress --config webpack.prod.js"
+  },
+  "dependencies": {
+    "vue": "^2.6.14",
+    "vue-router": "^3.5.2",
+    "vue-template-compiler": "2.6.14"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "babel-loader": "^8.2.2",
+    "css-loader": "^6.4.0",
+    "dotenv": "^10.0.0",
+    "html-webpack-plugin": "^5.3.2",
+    "mini-css-extract-plugin": "^2.4.2",
+    "sass": "^1.42.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.3.0",
+    "vue-loader": "15.9.8",
+    "webpack": "^5.58.1",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1",
+    "webpack-manifest-plugin": "^4.0.2",
+    "webpack-merge": "^5.8.0"
+  }
+}

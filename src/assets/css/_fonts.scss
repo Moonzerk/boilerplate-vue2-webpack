@@ -1,0 +1,11 @@
+
+@each $fontWeight in (300, 400, 500, 600, 700, 800) {
+    @each $fontStyle in (normal, italic) {
+        @font-face {
+            font-family: 'Open Sans';
+            font-style: $fontStyle;
+            font-weight: $fontWeight;
+            src: url('../fonts/open-sans/' + $fontWeight + '-' + $fontStyle + '.woff') format('woff');
+        }
+    }
+}
