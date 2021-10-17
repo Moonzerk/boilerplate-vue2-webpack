@@ -6,6 +6,8 @@ const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const { WebpackManifestPlugin } = require('webpack-manifest-plugin');
 
+const millisecondsPerDay = 1000 * 60 * 60 * 24;
+
 module.exports = merge(commonConfig, {
     output: {
         filename: 'js/[name].[contenthash].js',
@@ -84,6 +86,6 @@ module.exports = merge(commonConfig, {
     },
     cache: {
         compression: 'brotli',
-        maxAge: 864000 // 10 jours
+        maxAge: millisecondsPerDay * 7 // 1 semaine
     }
 });

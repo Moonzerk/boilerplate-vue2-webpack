@@ -5,6 +5,8 @@ const { VueLoaderPlugin } = require('vue-loader');
 const npmCommand = process.env.npm_lifecycle_event;
 const mode = npmCommand === 'build' ? 'production' : 'development';
 
+const millisecondsPerDay = 1000 * 60 * 60 * 24;
+
 process.env.NODE_ENV = mode;
 
 module.exports = {
@@ -53,6 +55,6 @@ module.exports = {
         type: 'filesystem',
         cacheDirectory: path.resolve(__dirname, '.cache'),
         name: mode,
-        maxAge: 86400 // 1 jour
+        maxAge: millisecondsPerDay // 1 jour
     }
 };
