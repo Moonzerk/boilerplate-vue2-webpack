@@ -1,7 +1,7 @@
 {
   "name": "boilerplate-vue2-webpack",
   "version": "1.0.0",
-  "description": "Boilerplate vue 2 fait avec webpack 5 en octobre 2021.",
+  "description": "Boilerplate VueJs 2 fait avec Webpack 5",
   "main": "src/main.js",
   "author": "aligony",
   "license": "MIT",
