@@ -5,8 +5,9 @@
 Récupération du template :  
 ```bash
 git clone https://github.com/Ligonya/boilerplate-vue2-webpack.git
+cd boilerplate-vue2-webpack/
 rm -R .git/
-cp .env.example .env
+cp .env.dist .env
 ```
 
 Installation des dépendances :  

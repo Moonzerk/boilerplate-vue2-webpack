@@ -12,22 +12,22 @@ process.env.NODE_ENV = mode;
 module.exports = {
     mode,
     entry: {
-        app: path.resolve(__dirname, 'src/main.js')
+        app: path.resolve(__dirname, '../src/main.js')
     },
     output: {
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, '../dist')
     },
     module: {
         rules: [
             {
                 test: /\.vue$/,
-                include: path.resolve(__dirname, 'src'),
+                include: path.resolve(__dirname, '../src'),
                 exclude: /node_modules/,
                 use: 'vue-loader'
             },
             {
                 test: /\.m?js$/,
-                include: path.resolve(__dirname, 'src'),
+                include: path.resolve(__dirname, '../src'),
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
@@ -46,14 +46,14 @@ module.exports = {
     resolve: {
         extensions: ['.js'],
         alias: {
-            '@component': path.resolve(__dirname, './src/components/'),
-            '@img': path.resolve(__dirname, './src/assets/images/'),
-            '@page': path.resolve(__dirname, './src/pages/')
+            '@component': path.resolve(__dirname, '../src/components/'),
+            '@img': path.resolve(__dirname, '../src/assets/images/'),
+            '@page': path.resolve(__dirname, '../src/pages/')
         }
     },
     cache: {
         type: 'filesystem',
-        cacheDirectory: path.resolve(__dirname, '.cache'),
+        cacheDirectory: path.resolve(__dirname, '../.cache'),
         name: mode,
         maxAge: millisecondsPerDay // 1 jour
     }
