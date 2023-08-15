@@ -1,15 +1,9 @@
 <template>
-    <div>
-        <hello-world msg="Welcome to your Vue.js application !" />
-    </div>
+  <div>
+    <HelloWorld msg="Welcome to your Vue.js application !" />
+  </div>
 </template>
 
-<script>
+<script setup>
 import HelloWorld from '@component/hello-world.vue';
-
-export default {
-    components: {
-        HelloWorld
-    }
-}
 </script>

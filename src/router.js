@@ -1,25 +1,30 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
 import HomeComponent from '@page/home.vue';
-
-Vue.use(VueRouter);
+import { createRouter, createWebHashHistory } from 'vue-router';
 
 const routes = [
-    {
-        path: '*',
-        redirect: '/'
-    }, {
-        path: '/',
-        name: 'home',
-        component: HomeComponent
-    }, {
-        path: '/about',
-        name: 'about',
-        component: () => import(/* webpackChunkName: "about" */ '@page/about.vue')
-    }
+  {
+    path: '/',
+    name: 'home',
+    component: HomeComponent
+  }, {
+    path: '/about',
+    name: 'about',
+    component: () => import(/* webpackChunkName: "about" */ '@page/about.vue')
+  }
 ];
 
-export default new VueRouter({
-    mode: 'history',
-    routes
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes
 });
+
+// Handle page not found
+router.beforeEach((to, from, next) => {
+  if (to.matched.length === 0) {
+    next({ name: 'home' });
+  } else {
+    next();
+  }
+});
+
+export default router;

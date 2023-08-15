@@ -1,11 +1,16 @@
-import Vue from 'vue';
+import { createApp } from 'vue';
 import App from './app.vue';
-import router from './router.js';
 import './assets/css/main.scss';
+import router from './router.js';
 
-Vue.config.productionTip = process.env.NODE_ENV === 'development';
+(async () => {
+  const rootElement = document.getElementById('app');
+  if (!rootElement) {
+    return;
+  }
 
-new Vue({
-    router,
-    render: createElement => createElement(App)
-}).$mount('#app');
+  const app = createApp(App);
+
+  app.use(router);
+  app.mount(rootElement);
+})();
